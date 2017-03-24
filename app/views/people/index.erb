@@ -1,0 +1,12 @@
+<% if @people %>
+	<% @people.each do |person| %>
+		<h1><%= person.first_name %> <%= person.last_name %></h1> 
+
+		<form id="add-friend" method="post" action="/people/<%=person.id%>">
+		      <br><button class="btn" type="submit">Add as Friend</button>
+	   </form>
+
+	<% end %>
+<% else %>
+	<h1>There are no friends to add at this time.</h1>
+<% end %>

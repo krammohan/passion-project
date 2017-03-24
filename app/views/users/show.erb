@@ -1,0 +1,44 @@
+<div>
+  <h1>Welcome back, <%= @user.first_name + ' ' + @user.last_name %>!</h1>
+
+	<% if logged_in? %>
+		<a class="btn" href="/people">
+		<br><button class="btn" type="submit">Add New Contact</button></a>
+
+		<% if @user.looking_for_contacts == "Yes" %>
+			<form id="set-not-looking" method="post" action="/users/not-looking">
+		      	<br><button class="btn" type="submit">Stop Receiving Recommendations</button>
+	   		</form>
+	   	<% elsif @user.looking_for_contacts == "No" %>
+	   		<form id="set-looking" method="post" action="/users/is-looking">
+		      <br><button class="btn" type="submit">Receive Recommendations</button>
+	   		</form>
+	    <% end %>
+	<% end %>
+
+<div>	
+  <h3>These people in your network are looking for contacts:</h3>
+
+  <% @unrecommended.each do |contact| %>
+  	<h4><%= contact.first_name %> <%= contact.first_name %> is looking for contacts in <%= contact.location %>
+  		<a class="btn" href="/people/<%= contact.id%>/recommend">
+		<br><button class="btn" type="submit">Recommend a Friend</button></a>
+  	</h4>
+  <% end %>
+</div>
+
+<div>
+	<h3>Your Recommendations:</h3>
+	<ul>
+
+		<% @unfriended.each do |rec| %>
+			<h4><%=rec.first_name%> <%=rec.last_name%></h4>
+			<form id="add-friend" method="post" action="/people/<%=rec.id%>">
+	      		<br><button class="btn" type="submit">Add as Friend</button>
+   			</form>
+   		  <% end %>
+
+	
+	</ul>
+</div>
+</div>

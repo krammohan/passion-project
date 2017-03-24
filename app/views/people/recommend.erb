@@ -1,0 +1,18 @@
+<% if @contacts_to_recommend.length != 1 && @contacts_to_recommend.length != 0%>
+	<% @contacts_to_recommend.each do |contact| %>
+	  <% if contact != @friend %>
+	    <% if @recommended_already == false %>
+			<h1><%= contact.first_name %> <%= contact.last_name %></h1> 
+
+			<form id="recommend-friend" method="post" action="/people/<%=@friend.id%>/<%=contact.id%>">
+			      <br><button class="btn" type="submit">Recommend to <%=@friend.first_name%></button>
+		   </form>
+
+		 <% end %> 
+	   <% end %>
+
+	<% end %>
+
+<% elsif @contacts_to_recommend.length == 1 || @contacts_to_recommend.length == 0%>
+	<h1>You have no contacts to recommend to <%= @friend.first_name%> at this time!</h1>
+<% end %>
