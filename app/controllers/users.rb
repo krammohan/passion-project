@@ -41,13 +41,18 @@ get '/users/:id' do
 end
 
 post '/users/not-looking' do
-  @user = current_user
-  @user.update_attribute(:looking_for_contacts, "No")
-  redirect "/users/#{@user.id}"
+  current_user.update_attribute(:looking_for_contacts, "No")
+  redirect "/users/#{current_user.id}"
 end
 
 post '/users/is-looking' do
   @user = current_user
   @user.update_attribute(:looking_for_contacts, "Yes")
   redirect "/users/#{@user.id}"
+end
+
+get '/users/:id/contacts' do
+  @user = current_user
+  @contacts = @user.friends
+  erb :'/users/contacts'
 end

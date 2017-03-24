@@ -7,3 +7,37 @@
 th {
   text-align: left;
 }
+
+
+.margin-top-10P {
+	margin-top: 6%;
+}
+
+.people-to-add {
+	margin-top: 2%;
+}
+
+#desc {
+    width: 400px;
+    height: 100px;
+    background-color: lightgray;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.show-page {
+	text-align: center;
+}
+
+.login-signup {
+	margin-top: 15%;
+	text-align: center;
+	background-color: lightgray;
+	
+}

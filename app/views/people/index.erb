@@ -1,12 +1,23 @@
-<% if @people %>
-	<% @people.each do |person| %>
-		<h1><%= person.first_name %> <%= person.last_name %></h1> 
+ <div class="margin-top-10P">
+ <div class="w3-row">
+ <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">Add Friends</h4>
+        </div>
+      </div>
+     </div>
+    </div>
 
-		<form id="add-friend" method="post" action="/people/<%=person.id%>">
-		      <br><button class="btn" type="submit">Add as Friend</button>
-	   </form>
+<div class="people-to-add">
+	<% if @people %>
+		<% @people.each do |person| %>
+			<h1><%= person.first_name %> <%= person.last_name %></h1> 
+			<form id="add-friend" method="post" action="/people/<%=person.id%>">
+			      <button class="btn" type="submit"><i class="fa fa-plus"></i></button>
+		   </form>
 
+		<% end %>
+	<% else %>
+		<h1>There are no friends to add at this time.</h1>
 	<% end %>
-<% else %>
-	<h1>There are no friends to add at this time.</h1>
-<% end %>
+</div>
