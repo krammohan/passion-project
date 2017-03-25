@@ -24,7 +24,7 @@
 	  <h3>These people in your network are looking for contacts:</h3>
 
 	  <% @unrecommended.each do |contact| %>
-	  	<h4><%= contact.first_name %> <%= contact.first_name %> is looking for contacts in <%= contact.location %>
+	  	<h4><%= contact.first_name %> <%= contact.last_name %> is looking for contacts in <%= contact.location %>
 	  		<a class="btn" href="/people/<%= contact.id%>/recommend">
 			<br><button class="btn" type="submit">Recommend a Friend</button></a>
 	  	</h4>

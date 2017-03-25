@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # PostgreSQL driver
 gem 'pg'
+gem 'dotenv'
 gem 'twilio-ruby', '~> 4.11.1'
 # Sinatra driver
 gem 'sinatra'
