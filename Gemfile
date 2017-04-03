@@ -20,7 +20,7 @@ gem 'rake'
 gem 'shotgun'
 gem 'bcrypt'
 
-group :test do
-  gem 'faker'
-  gem 'rspec'
-end
+
+ gem 'faker'
+ gem 'rspec'
+
