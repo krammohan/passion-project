@@ -1,0 +1,31 @@
+<div class="login-signup">
+
+<h1>Sign Up</h1>
+  <form action="/users" method="POST">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="user[first_name]" placeholder="Your name..">
+    <br><br>
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="user[last_name]" placeholder="Your last name..">
+    <br><br>
+    <label for="location">Location</label>
+    <input type="text" id="location" name="user[location]" placeholder="Your location..">
+    <br><br>
+    <label for="location">Looking for contacts?</label>
+    <select name=user[looking_for_contacts]>
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+    <br><br>
+    <label for="email">Email</label>
+    <input type="text" id="email" name="user[email]" placeholder="Your email..">
+    <br><br>    
+    <input type="text" id="phone" name="user[phone]" placeholder="eg. (555) 435-3875">
+    <br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="user[password]" placeholder="Your password..">
+    <br><br>
+    <input type="submit" value="Submit">
+    <br><br>
+  </form>
+</div>

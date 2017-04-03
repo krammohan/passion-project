@@ -1,0 +1,24 @@
+
+<% if @contacts.count != 0%>
+  <div class="login-signup">
+	<% @contacts.each do |c| %>
+			<h3><%= c.first_name %> <%= c.last_name %></h3>
+			<h6>Phone: <%= c.phone %></h6>
+			<h6>Email: <%= c.email %></h6>
+			<form method="get" action="/text/<%=c.id%>">
+                
+            <button class="w3-bar-item w3-button w3-hover-white" id="logout" type="submit">Send a Text</button>
+          </form>
+	<% end %>
+	<br>
+  </div>
+<% elsif @contacts.count == 0 %>
+  <div class="login-signup">
+	<h1>You have no contacts at this time!</h1>
+	<h3>
+	<a href="/people" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News">Add Contacts</a>
+	</h3>
+  </div>
+<% end %>
+
+
